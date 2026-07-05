@@ -20,7 +20,7 @@ from werkzeug.security import (
 # ==========================================
 
 app = Flask(__name__)
-app.secret_key = secrets.token_hex(32)
+app.secret_key = "loan_prediction_secret_key_2025"
 
 # ==========================================
 # Load Trained Model
