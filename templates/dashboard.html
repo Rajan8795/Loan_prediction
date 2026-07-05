@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Loan Prediction Dashboard</title>
+
+    <!-- ✅ CSS LINK (IMPORTANT FIX) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- MATRIX BACKGROUND -->
+<div class="matrix-bg"></div>
+
+<!-- CYBER BACKGROUND -->
+<div class="cyber-bg">
+
+    <div class="cyber-column" style="left:35%; animation-duration:15s;">
+server
+cache
+proxy
+matrix
+hash
+Decision_tree.fit()
+predict_proba()
+model_loaded
+accuracy_score
+Loan_prediction
+feature_vector
+dataset_ready
+classification_complete
+ai_analysis
+credit_score_check
+income_validation
+    </div>
+
+</div>
+
+<!-- MAIN CONTAINER -->
+<div class="main-container">
+
+    <div class="dashboard-card">
+
+        <h1>Welcome, {{ user_name }}</h1>
+
+        <a href="/logout" class="logout-btn">Logout</a>
+
+        <h2>Loan Approval Prediction</h2>
+
+        <p class="subtitle">
+            Enter applicant details to predict loan approval status...
+        </p>
+
+        <!-- FLASH RESULT -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="toast {{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <!-- PREDICTION FORM -->
+        <form action="/predict" method="POST">
+
+            <div class="grid-form">
+
+                <input type="number" name="Age" placeholder="Age" required>
+
+                <input type="number" name="Income" placeholder="Income" required>
+
+                <input type="number" name="LoanAmount" placeholder="Loan Amount" required>
+
+                <input type="number" name="CreditScore" placeholder="Credit Score" required>
+
+            </div>
+
+            <button type="submit">
+                Predict Loan Status
+            </button>
+
+        </form>
+
+        <!-- RESULT BOX -->
+        {% if prediction_text %}
+        <div class="result-box">
+            {{ prediction_text }}
+        </div>
+        {% endif %}
+
+    </div>
+</div>
+
+<!-- JS -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

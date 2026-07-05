@@ -1,0 +1,547 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+    min-height:100vh;
+
+    font-family:
+    "Segoe UI",
+    sans-serif;
+
+    background:
+    radial-gradient(circle at top,
+    #08120f,
+    #020202 65%);
+
+    overflow-x:hidden;
+
+    color:white;
+}
+
+/* =========================
+   MATRIX BACKGROUND
+========================= */
+
+.matrix-bg{
+
+    position:fixed;
+    pointer-events:none;
+    width:100%;
+    height:100%;
+
+    top:0;
+    left:0;
+
+    z-index:-3;
+
+    background:
+    repeating-linear-gradient(
+        180deg,
+        rgba(0,255,120,.05) 0px,
+        rgba(0,255,120,.05) 2px,
+        transparent 2px,
+        transparent 20px
+    );
+
+    animation:
+    matrixMove 5s linear infinite;
+}
+
+@keyframes matrixMove{
+
+    from{
+        transform:
+        translateY(-100px);
+    }
+
+    to{
+        transform:
+        translateY(100px);
+    }
+}
+
+/* =========================
+   CYBER TEXT BACKGROUND
+========================= */
+
+.cyber-bg{
+
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+
+    z-index:-2;
+
+    pointer-events:none;
+}
+
+.cyber-column{
+
+    position:absolute;
+
+    top:-100%;
+
+    color:#0a7535;
+
+    font-family:Consolas,monospace;
+
+    font-size:30px;
+
+    white-space:pre;
+
+    opacity:.08;
+
+    animation:rain linear infinite;
+}
+
+@keyframes rain{
+
+    from{
+        transform:translateY(-100%);
+    }
+
+    to{
+        transform:translateY(2222vh);
+    }
+}
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.main-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass-card,
+.dashboard-card{
+
+    width:700px;
+
+    max-width:92%;
+
+    margin:auto;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:
+    rgba(10,20,15,.75);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(0,255,120,.15);
+
+    box-shadow:
+    0 0 40px rgba(0,255,120,.15),
+    0 0 80px rgba(0,255,120,.05);
+}
+
+/* =========================
+   REGISTER CARD
+========================= */
+
+.register-card{
+
+    border:
+    1px solid rgba(0,255,120,.2);
+
+    box-shadow:
+    0 0 40px rgba(0,255,120,.15);
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card{
+
+    border:
+    1px solid rgba(0,255,255,.2);
+
+    box-shadow:
+    0 0 40px rgba(0,255,255,.15);
+
+    animation:
+    dropLogin .9s ease;
+}
+
+@keyframes dropLogin{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(-300px);
+    }
+
+    70%{
+
+        transform:
+        translateY(30px);
+    }
+
+    100%{
+
+        transform:
+        translateY(0);
+    }
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+    color:#7dffb4;
+
+    text-shadow:
+    0 0 20px rgba(0,255,153,.3);
+}
+
+.subtitle{
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+    color:#d6fff0;
+}
+
+/* =========================
+   FORMS
+========================= */
+input{
+
+    width:100%;
+
+    height:52px;
+
+    padding:0 18px;
+
+    margin-bottom:16px;
+
+    border-radius:14px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    font-size:15px;
+
+    color:white;
+}
+input::placeholder{
+
+    color:#cccccc;
+}
+
+input:hover{
+
+    background:
+    rgba(255,255,255,.12);
+}
+
+input:focus{
+
+    transform:
+    translateY(-2px)
+    scale(1.02);
+
+    box-shadow:
+    0 0 30px rgba(0,255,153,.4);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+    135deg,
+    #00ff99,
+    #00ccff
+    );
+
+    color:black;
+
+    transition:.3s;
+}
+
+button:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.04);
+
+    letter-spacing:1px;
+
+    filter:brightness(1.15);
+
+    box-shadow:
+    0 0 25px rgba(0,255,153,.5);
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.switch-link{
+
+    text-align:center;
+
+    margin-top:20px;
+}
+
+.switch-link a{
+
+    color:#00ff99;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.switch-link a:hover{
+
+    color:#00ccff;
+
+    text-shadow:
+    0 0 15px rgba(0,255,255,.5);
+}
+
+/* =========================
+   TOAST POPUP
+========================= */
+
+.toast{
+
+    position:fixed;
+
+    top:30px;
+
+    right:30px;
+
+    padding:18px 30px;
+
+    border-radius:15px;
+
+    z-index:99999;
+
+    font-weight:700;
+
+    backdrop-filter:
+    blur(10px);
+
+    box-shadow:
+    0 0 30px rgba(0,0,0,.3);
+
+    animation:
+    slideToast .4s ease;
+}
+
+.success{
+
+    background:#2196f3;
+
+    color:white;
+}
+
+.danger{
+
+    background:#ff3b3b;
+
+    color:white;
+}
+
+@keyframes slideToast{
+
+    from{
+
+        transform:
+        translateX(200px);
+
+        opacity:0;
+    }
+
+    to{
+
+        transform:
+        translateX(0);
+
+        opacity:1;
+    }
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-card{
+
+    max-width:850px;
+
+    border:
+    1px solid rgba(255,255,255,.12);
+
+    background:
+    rgba(255,255,255,.06);
+}
+
+.dashboard-banner{
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    border-radius:20px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    text-align:center;
+}
+
+.dashboard-banner h2{
+
+    color:#7dffb4;
+
+    margin-bottom:10px;
+}
+
+.logout-btn{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:10px;
+
+    background:#ff4a4a;
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-bottom:20px;
+
+    transition:.3s;
+}
+
+.logout-btn:hover{
+
+    transform:
+    scale(1.05);
+}
+
+.result-box{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    font-size:22px;
+
+    background:
+    rgba(0,255,120,.15);
+
+    border:
+    1px solid #00ff99;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .glass-card,
+    .dashboard-card{
+
+        padding:25px;
+    }
+
+    h1{
+
+        font-size:28px;
+    }
+}
+
+.glass-card,
+.dashboard-card{
+
+    position: relative;
+
+    z-index: 1000;
+}
+
+input,
+button,
+a{
+
+    position: relative;
+
+    z-index: 1001;
+
+    pointer-events: auto;
+}
