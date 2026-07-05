@@ -9,6 +9,7 @@ The project combines Machine Learning, Flask, SQLite, and a modern responsive us
 
 ✨ Features
 
+
 ✅ User Registration and Login System
 
 ✅ Secure Password Hashing
@@ -28,6 +29,7 @@ The project combines Machine Learning, Flask, SQLite, and a modern responsive us
 ✅ Modern Cyber-Themed User Interface
 
 🛠️ Technologies Used
+
 Technology	Purpose
 Python	Backend Development
 Flask	Web Framework
@@ -59,6 +61,7 @@ Output
 ❌ Loan Rejected
 
 📂 Project Structure
+
 Loan_Prediction/
 │
 ├── app.py
@@ -77,7 +80,9 @@ Loan_Prediction/
 └── README.md
 
 🚀 Installation
+
 Clone Repository
+
 git clone https://github.com/Rajan8795/Loan_prediction.git
 Move to Project Directory
 cd Loan_prediction
